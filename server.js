@@ -72,7 +72,7 @@ app.patch("/api/todos/:id", (req, res) => {
 app.delete("/api/todos/:id", (req, res) => {
   Todo.deleteOne({ _id: req.params.id })
     .then(() => {
-      res.json('Record was deleted');
+      res.json({msg: 'Record was deleted'});
     })
     .catch(err => {
       res.status(500).send(err);
